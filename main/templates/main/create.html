@@ -1,0 +1,29 @@
+{% extends 'main/navbar.html' %}
+
+
+{% if user.is_authenticated %}
+{% block content %}
+    <div class="create-container">
+        
+            <div class="create-header">
+                <h2>Create New List</h2>
+            </div>
+        
+        
+        <div class="create">
+            <form action="#" method="post" class="form-group">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button type="submit" name="create" id="create" class="btn btn-success">Create List</button>
+                    </div>
+                    {{form.name}}
+                </div>            
+            </form>
+        </div>
+        
+    </div>
+{% endblock %}
+{% else %}
+    <p style="margin-top: 10%;">You are not logged in. Login <a href="/login">here</a>, or <a href="/register">create an account</a></p>
+{% endif %}

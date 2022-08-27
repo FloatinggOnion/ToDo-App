@@ -1,0 +1,20 @@
+{% extends 'main/navbar.html' %}
+
+
+{% block content %}
+<div class="register-container" style="margin: 0 20% 0 20%;">
+    <h2 style="padding-top: 3%;">Create Account</h2>
+
+    {% load crispy_forms_tags %}
+    <form method="post" class="form-group">
+        {% csrf_token %}
+
+        {{form | crispy}}
+        <br>
+        <button type="submit" name="createAccount" class="btn btn-primary">Create Account</button>
+
+        <p>Already have an account? <a href="/login/" style="text-decoration: none;">Login</a></p>
+
+    </form>
+</div>
+{% endblock %}

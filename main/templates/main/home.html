@@ -1,0 +1,36 @@
+{% extends 'main/navbar.html' %}
+
+
+
+        {% block title %}{% endblock %}
+{% block content %}    
+<div class="main-content">
+        {% if user.is_authenticated %}
+
+                <h2 style="margin-top: 7%;">My Lists</h2>
+                <div class="stuff" style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <a href="/logout/" style="text-decoration: none; margin: 1.3rem; color: black;">Logout</a>
+                    <a href="#" style="text-decoration: none; margin: 1.3rem; color: black;">Welcome, {{user.username}}</a>
+                </div>
+            
+                <ul class="list-group">
+                {% for td in user.todolist.all %}
+                    <li class="list-group-item" style="background-color: transparent;" onclick="glow()"><a href="/{{td.id}}" style="text-decoration: none; color: black;">{{td.name}}</a></li>
+                {% endfor %}
+                </ul>
+
+        {% else %}
+            
+            <p style="margin-top: 10%;">You are not logged in. Login <a href="/login/">here</a>, or <a href="/register/">create an account</a></p>
+        {% endif %}
+</div>
+
+<script>
+    let list = document.getElementsByTagName('li');
+
+    function glow(){
+        list.classList.toggle('active');
+    }
+</script>
+{% endblock %}
+    

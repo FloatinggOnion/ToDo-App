@@ -1,0 +1,158 @@
+body{
+    background-color: beige;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navigation-container{
+    display: flex;
+    flex-direction: column;
+    width: 17%;
+    height: 100vh;
+    background-color: rgb(37, 37, 37);
+    padding: 2rem;
+    align-items: flex-start;
+    position: fixed;
+}
+
+.navigation-container a{
+    text-decoration: none;
+    text-align: left;
+    color: burlywood;
+}
+
+.navigation{
+    display: grid;
+    margin: 0px;
+}
+
+.navigation a{
+    text-align: left;
+    margin: 20px;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-container{
+    margin: 0 20% 0 10%;
+    align-items: center;
+}
+
+.create-header{
+    margin: 7% 30px 0 30px;
+}
+
+.create{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media(max-width: 768px){
+    .create-container{
+        margin: 5%;
+        padding: 0;
+    }
+}
+
+
+/* Hamburger menu */
+.hamburger{
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    transition: all 0.25s;
+    position: relative;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    margin: 20px;
+    padding: 5px;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background: #000;
+    transform: rotate(0);
+    transition: all 0.5s;
+}
+
+.hamburger-middle{
+    transform: translateY(7px);
+}
+
+.hamburger-bottom{
+    transform: translateY(14px);
+}
+
+.open{
+    transform: rotate(90deg);
+    transform: translateY(0px);
+}
+
+.open .hamburger-top{
+    transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle{
+    display: none;
+}
+
+.open .hamburger-bottom{
+    transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+@media (max-width: 768px){
+    .navigation-container{
+        display: none;
+    }
+}
+
+.second-navigation{
+    
+    display: none;
+}
+
+.second-navigation a{
+    text-decoration: none;
+    color: black;
+}
+
+.hidden {
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.3);
+    background-color: beige;
+    margin: 10px;
+    padding: 5px;
+}
+
+@media (min-width: 768px){
+    .second-navigation{
+        display: none;
+    }
+
+    .hamburger{
+        display: none;
+    }
+}
+
+
+@media (max-width: 425px) {
+    #create-form{
+        margin: 7% 5% 0 5%;
+    }
+}
